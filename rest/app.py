@@ -11,7 +11,12 @@ def index():
     return 'Welcome to the MVG NOW API...'
 
 
-@app.route('/query/<query_str>', methods=['GET'])
+@app.route('/_api/mvg')
+def mvg_root():
+    return 'Endpoints: /query/<station-name> and /station/<station-id>'
+
+
+@app.route('/_api/mvg/query/<query_str>', methods=['GET'])
 def get_query(query_str):
     url = "https://www.mvg.de/fahrinfo/api/location/query?q=" + query_str
     user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
@@ -34,7 +39,7 @@ def get_query(query_str):
     return resp
 
 
-@app.route('/station/<station_id>', methods=['GET'])
+@app.route('/_api/mvg/station/<station_id>', methods=['GET'])
 def get_station(station_id):
     url = "https://www.mvg.de/fahrinfo/api/departure/" + station_id + "?footway=0"
     user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
