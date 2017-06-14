@@ -18,7 +18,7 @@ def mvg_root():
 
 @app.route('/_api/mvg/query/<query_str>', methods=['GET'])
 def get_query(query_str):
-    url = "https://www.mvg.de/fahrinfo/api/location/query?q=" + query_str
+    url = "https://www.mvg.de/fahrinfo/api/location/queryWeb?q=" + query_str
     user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
     request = urllib2.build_opener()
     request.addheaders = [
