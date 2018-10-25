@@ -25,7 +25,7 @@ pm2 startup
 You need to copy the command given and paste back into your terminal.
 ```
 cd ~
-nano flash-start.sh
+nano flask-start.sh
 ```
 Add the command for the python script to the .sh file:
 ```
@@ -34,7 +34,7 @@ sudo python ~/rest/app.py
 Exit and Save
 Make the script executable
 ```
-chmod +x flash-start.sh
+chmod +x flask-start.sh
 ```
 Start the flask web app and force it to start on boot
 ```
